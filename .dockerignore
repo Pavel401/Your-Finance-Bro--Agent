@@ -1,0 +1,73 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.pyc
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+env.bak/
+venv.bak/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+*.cover
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Documentation
+README.md
+RAILWAY_DEPLOYMENT.md
+*.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Railway specific
+railway.json
+.railwayignore
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Lock files (optional - include if you want to use fresh dependency resolution)
+# uv.lock

@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 import uvicorn
+import os
 from pathlib import Path
 
 from app.endpoint.agent import router
@@ -49,4 +50,6 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8080, reload=True)
+    # Get port from environment variable (Railway sets this) or default to 8080
+    port = int(os.getenv("PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port, reload=True)
