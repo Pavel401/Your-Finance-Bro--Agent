@@ -24,6 +24,5 @@ def convert_chat_history_to_messages(chat_history: List[ChatMessage]) -> list:
         if msg.role == "user":
             messages.append(ModelRequest(parts=[UserPromptPart(content=msg.content)]))
         elif msg.role == "assistant":
-            # Create TextPart for assistant responses
             messages.append(ModelResponse(parts=[TextPart(content=msg.content)]))
     return messages

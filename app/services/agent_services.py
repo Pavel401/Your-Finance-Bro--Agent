@@ -1,11 +1,13 @@
+from pydantic import ValidationError
 from pydantic_ai import Agent, RunContext
 from pydantic_ai.messages import ModelRequest, ModelResponse
 from typing import List, AsyncIterator
 
 from app.configs.model_config import LLMModelName
+from app.model.agent_model import AgentResponse, ChatMessage
+from app.model.finance_model import FinanceInfo
 from app.services.finance_service import flatten_finance_info
 from app.services.llm_service import get_llm_model_config
-from app.model.finance_model import FinanceInfo, ChatMessage
 from app.services.utility_service import convert_chat_history_to_messages
 
 
@@ -29,6 +31,7 @@ def get_finance_agent() -> Agent:
     global _finance_agent
     if _finance_agent is None:
         _finance_agent = Agent(
+            output_type=AgentResponse,
             model=get_llm_model_config(LLMModelName.GPT_4O_MINI),
             deps_type=FinanceDeps,
             system_prompt=(
@@ -54,7 +57,7 @@ async def process_agent_output(
 ) -> AsyncIterator[str]:
     """
     Process the agent output with user query, finance info, and chat history.
-    Streams the response back to the client.
+    Streams validated JSON response objects back to the client.
 
     Args:
         user_query: The user's question
@@ -62,7 +65,7 @@ async def process_agent_output(
         chat_history: Previous conversation history
 
     Yields:
-        Chunks of the agent's response as they are generated
+        Newline-delimited JSON strings containing validated AgentResponse objects
     """
     # Flatten finance info into readable text context
     finance_context = flatten_finance_info(finance_info)
@@ -78,7 +81,19 @@ async def process_agent_output(
 
     # Stream the agent's response
     async with agent.run_stream(
-        user_query, deps=deps, message_history=message_history
+        user_query,
+        deps=deps,
+        message_history=message_history,
     ) as result:
-        async for message in result.stream():
-            yield message
+        async for message, last in result.stream_responses(debounce_by=0.01):
+            try:
+                profile = await result.validate_response_output(
+                    message,
+                    allow_partial=not last,
+                )
+                # Convert validated response to JSON and yield for the frontend
+                if profile:
+                    # Convert Pydantic model to JSON string with newline delimiter
+                    yield profile.model_dump_json() + "\n"
+            except ValidationError:
+                continue
