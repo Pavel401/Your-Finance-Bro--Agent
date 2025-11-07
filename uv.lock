@@ -2048,6 +2048,7 @@ dependencies = [
     { name = "fastapi" },
     { name = "pydantic-ai" },
     { name = "pydantic-ai-slim", extra = ["google", "openai"] },
+    { name = "python-dotenv" },
     { name = "uvicorn" },
 ]
 
@@ -2056,6 +2057,7 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.121.0" },
     { name = "pydantic-ai", specifier = ">=1.12.0" },
     { name = "pydantic-ai-slim", extras = ["google", "openai"], specifier = ">=1.12.0" },
+    { name = "python-dotenv", specifier = ">=1.0.0" },
     { name = "uvicorn", specifier = ">=0.38.0" },
 ]
 
