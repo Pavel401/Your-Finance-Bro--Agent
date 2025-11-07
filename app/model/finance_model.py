@@ -68,18 +68,3 @@ class FinanceInfo(BaseModel):
     transactions: Optional[List[Transaction]] = None
     accounts: Optional[List[Account]] = None
     budgets: Optional[List[Budget]] = None
-
-
-class ChatMessage(BaseModel):
-    """Represents a single message in the chat conversation."""
-
-    role: str  # "user" or "assistant"
-    content: str
-
-
-class AgentRequest(BaseModel):
-    """Request model for the agent endpoint."""
-
-    user_query: str
-    finance_info: FinanceInfo
-    chat_history: Optional[List[ChatMessage]] = []
