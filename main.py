@@ -43,6 +43,16 @@ async def serve_frontend():
     return FileResponse(frontend_path / "index.html")
 
 
+@app.get("/config", tags=["Config"])
+async def get_config():
+    """Get frontend configuration."""
+    backend_url = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+    # Ensure the URL has the proper protocol
+    if not backend_url.startswith(("http://", "https://")):
+        backend_url = f"https://{backend_url}"
+    return {"apiBaseUrl": backend_url}
+
+
 @app.get("/health", tags=["Health"])
 async def health_check():
     """Health check endpoint."""

@@ -3,8 +3,8 @@ let financeData = null;
 let chatHistory = [];
 let isProcessing = false;
 
-// API Configuration
-const API_BASE_URL = 'http://127.0.0.1:8000';
+// API Configuration - Will be loaded from backend
+let API_BASE_URL = window.location.origin; // Default to current origin
 
 // DOM Elements
 const uploadSection = document.getElementById('uploadSection');
@@ -24,9 +24,27 @@ const sendBtn = document.getElementById('sendBtn');
 const chatSubtitle = document.getElementById('chatSubtitle');
 
 // Initialize
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  // Load configuration from backend
+  await loadConfig();
   initializeEventListeners();
 });
+
+async function loadConfig() {
+  try {
+    const response = await fetch('/config');
+    if (response.ok) {
+      const config = await response.json();
+      API_BASE_URL = config.apiBaseUrl;
+      console.log('API Base URL loaded:', API_BASE_URL);
+    } else {
+      console.warn('Failed to load config, using default:', API_BASE_URL);
+    }
+  } catch (error) {
+    console.error('Error loading config:', error);
+    console.warn('Using default API Base URL:', API_BASE_URL);
+  }
+}
 
 function initializeEventListeners() {
   // File upload events
