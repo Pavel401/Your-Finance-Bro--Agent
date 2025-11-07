@@ -15,9 +15,9 @@ class Account(BaseModel):
     is_active: Optional[bool] = None
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
-    ifsc_code: None
-    branch_name: None
-    description: None
+    ifsc_code: Optional[str] = None
+    branch_name: Optional[str] = None
+    description: Optional[str] = None
 
 
 class Budget(BaseModel):
@@ -57,7 +57,7 @@ class Transaction(BaseModel):
     description: Optional[str] = None
     amount: Optional[float] = None
     category: Optional[Category] = None
-    location: None
+    location: Optional[str] = None
     photos: Optional[List[Any]] = None
     sms_content: Optional[str] = None
     account_id: Optional[UUID] = None
@@ -68,3 +68,18 @@ class FinanceInfo(BaseModel):
     transactions: Optional[List[Transaction]] = None
     accounts: Optional[List[Account]] = None
     budgets: Optional[List[Budget]] = None
+
+
+class ChatMessage(BaseModel):
+    """Represents a single message in the chat conversation."""
+
+    role: str  # "user" or "assistant"
+    content: str
+
+
+class AgentRequest(BaseModel):
+    """Request model for the agent endpoint."""
+
+    user_query: str
+    finance_info: FinanceInfo
+    chat_history: Optional[List[ChatMessage]] = []
