@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 import uvicorn
+from pathlib import Path
 
 from app.endpoint.agent import router
 
@@ -26,8 +29,20 @@ app.add_middleware(
 # Include agent router
 app.include_router(router=router, prefix="/agent", tags=["Agent"])
 
+# Get the frontend directory path
+frontend_path = Path(__file__).parent / "frontend"
 
-@app.get("/", tags=["Health"])
+# Mount static files (CSS, JS)
+app.mount("/static", StaticFiles(directory=frontend_path), name="static")
+
+
+@app.get("/", tags=["Frontend"])
+async def serve_frontend():
+    """Serve the frontend HTML file."""
+    return FileResponse(frontend_path / "index.html")
+
+
+@app.get("/health", tags=["Health"])
 async def health_check():
     """Health check endpoint."""
     return {"status": "healthy", "message": "Your Finance Bro API is running"}
