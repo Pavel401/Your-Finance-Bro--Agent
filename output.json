@@ -1,0 +1,243 @@
+{
+  "exportInfo": {
+    "exportDate": "2025-11-06T16:57:11.134691",
+    "appVersion": "1.0.0",
+    "dataFormat": "json",
+    "totalTransactions": 13,
+    "totalAccounts": 3,
+    "totalBudgets": 2
+  },
+  "transactions": [
+    {
+      "id": "34b0dd57-158b-41fa-b9aa-8114ac1483bb",
+      "date": "2025-11-04T09:19:53.000",
+      "type": "transfer",
+      "title": "Payment",
+      "description": "Transaction (7252)\nRef: 589061111461",
+      "amount": 50000.0,
+      "category": "transfer",
+      "location": null,
+      "photos": [],
+      "smsContent": "A/c *7252 debited Rs. 50000.00 on 04-11-25 to SK MABUD  AL. UPI:589061111461. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "23669a68-6f10-4a71-bde8-87a827ac67d1",
+      "date": "2025-11-03T22:07:04.000",
+      "type": "credit",
+      "title": "Money Received",
+      "description": "Transaction via HDFC Bank (7252)",
+      "amount": 54800.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "Rs. 54,800 credited to A/c XX7252 on 11-03-2025 at 22:06:53 UTR:HDFCXX94405/NEFT/FEATSCLUB /         Avl Bal- Rs. 58,117.30 CR -Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "2fb02d90-5cbd-4105-9c4e-57d902b6b8c3",
+      "date": "2025-11-03T13:21:58.000",
+      "type": "debit",
+      "title": "Payment",
+      "description": "Transaction (7252)\nRef: 807631716690",
+      "amount": 1273.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "A/c *7252 debited Rs. 1273.00 on 03-11-25 to Swiggy. UPI:807631716690. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "12e4df38-90f2-4851-8658-a37ee4ad7ea2",
+      "date": "2025-11-03T12:04:15.000",
+      "type": "debit",
+      "title": "Payment",
+      "description": "Transaction (7252)\nRef: 212995815529",
+      "amount": 320.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "A/c *7252 debited Rs. 320.00 on 03-11-25 to Mr Amrit Kum. UPI:212995815529. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "a0bdad0d-891d-4c6d-98f5-4d08df0be74d",
+      "date": "2025-11-03T09:49:56.000",
+      "type": "debit",
+      "title": "Payment",
+      "description": "Transaction (7252)\nRef: 031442850120",
+      "amount": 1674.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "A/c *7252 debited Rs. 1674.00 on 03-11-25 to AMAZON PAY. UPI:031442850120. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "274b1e03-6305-417a-af29-f7fc69dbf0f9",
+      "date": "2025-11-03T09:49:20.000",
+      "type": "debit",
+      "title": "Payment",
+      "description": "Transaction (7252)\nRef: 568225661629",
+      "amount": 496.02,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "A/c *7252 debited Rs. 496.02 on 03-11-25 to AMAZON PAY. UPI:568225661629. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "cdaad17c-88f3-4db3-a3cd-a4cf637b79c7",
+      "date": "2025-11-02T20:20:20.000",
+      "type": "debit",
+      "title": "Payment",
+      "description": "Transaction",
+      "amount": 108.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "Dear Swiggy customer, your refund reference number for Rs 108 is 245170207223-1-R1. https://r.swiggy.com/refunds",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "09f13e24-953f-4f1c-a37d-09b2deda9feb",
+      "date": "2025-11-02T20:20:19.000",
+      "type": "credit",
+      "title": "swiggy.refunds",
+      "description": "Transaction (7252)",
+      "amount": 108.0,
+      "category": "transfer",
+      "location": null,
+      "photos": [],
+      "smsContent": "Rs.108.00 credited to a/c *7252 on 02/11/2025 by a/c linked to VPA swiggy.refunds@axisbank (UPI Ref no 504778163065).Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "88b49f6a-c77c-4e92-b7fb-fe5634a69fbe",
+      "date": "2025-11-02T20:20:16.000",
+      "type": "debit",
+      "title": "Payment",
+      "description": "Transaction",
+      "amount": 108.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "Refund of Rs 108 has been initiated for Swiggy order 221061275962868. Updated balance should reflect in 2 hours. https://r.swiggy.com/refunds",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "51d90518-6ecd-481d-8418-658b5673ea0b",
+      "date": "2025-11-02T19:24:50.000",
+      "type": "debit",
+      "title": "Payment",
+      "description": "Transaction (7252)\nRef: 384704058012",
+      "amount": 414.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "A/c *7252 debited Rs. 414.00 on 02-11-25 to Swiggy Ltd. UPI:384704058012. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
+      "accountId": null
+    },
+    {
+      "id": "bd117ce4-a660-4018-afd0-53c3767290d9",
+      "date": "2025-11-01T22:52:42.000",
+      "type": "credit",
+      "title": "9883414525",
+      "description": "Transaction (7252)",
+      "amount": 68.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "Rs.68.00 credited to a/c *7252 on 01/11/2025 by a/c linked to VPA 9883414525@axl (UPI Ref no 701142460208).Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "d063bace-a852-42dd-a6d3-b8370cd1a733",
+      "date": "2025-11-01T21:00:03.000",
+      "type": "debit",
+      "title": "Payment",
+      "description": "Transaction (7252)\nRef: 063941337739",
+      "amount": 370.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "A/c *7252 debited Rs. 370.00 on 01-11-25 to SANJIT KUMAR. UPI:063941337739. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    },
+    {
+      "id": "c773bc15-5df1-46b0-8c3b-74a93c777d23",
+      "date": "2025-11-01T17:04:26.000",
+      "type": "debit",
+      "title": "Payment",
+      "description": "Transaction (7252)\nRef: 847503210960",
+      "amount": 1154.0,
+      "category": "other",
+      "location": null,
+      "photos": [],
+      "smsContent": "A/c *7252 debited Rs. 1154.00 on 01-11-25 to Swiggy. UPI:847503210960. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
+      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c",
+      "accountName": "Bank 1",
+      "accountNumber": "XXXXXX7252",
+      "bankName": "Indian Bank",
+      "accountType": "savings",
+      "balance": 5266.68,
+      "isActive": true,
+      "createdAt": "2025-11-06T16:56:13.195849",
+      "updatedAt": "2025-11-06T16:56:13.195850",
+      "ifscCode": null,
+      "branchName": null,
+      "description": null
+    },
+    {
+      "id": "0f0c7bbc-536a-4db3-8097-ec3e2ac3a53f",
+      "accountName": "Bank 2",
+      "accountNumber": "39329492349234",
+      "bankName": "HDFC BANK",
+      "accountType": "savings",
+      "balance": 85.0,
+      "isActive": false,
+      "createdAt": "2025-11-06T16:56:13.195984",
+      "updatedAt": "2025-11-06T16:56:13.195984",
+      "ifscCode": null,
+      "branchName": null,
+      "description": null
+    },
+    {
+      "id": "c37e968e-676c-4079-a6b8-31652e2b0523",
+      "accountName": "Bank 3",
+      "accountNumber": "99999996244",
+      "bankName": "SBI",
+      "accountType": "savings",
+      "balance": 84315.0,
+      "isActive": false,
+      "createdAt": "2025-11-06T16:56:13.195985",
+      "updatedAt": "2025-11-06T16:56:13.195985",
+      "ifscCode": null,
+      "branchName": null,
+      "description": null
+    }
+  ],
+  "budgets": [
+    {
+      "id": "d4b19f9e-df81-4b10-ad9e-71891c527e53",
+      "year": 2025,
+      "month": 11,
+      "amount": 8000.0,
+      "createdAt": "2025-11-06T16:23:50.000",
+      "updatedAt": "2025-11-06T16:23:50.000"
+    },
+    {
+      "id": "fc3876cf-063e-49f6-81df-cd171cf714e5",
+      "year": 2025,
+      "month": 10,
+      "amount": 20000.0,
+      "createdAt": "2025-11-06T16:24:07.000",
+      "updatedAt": "2025-11-06T16:24:07.000"
+    }
+  ]
+}

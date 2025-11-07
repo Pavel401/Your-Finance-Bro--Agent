@@ -1,18 +1,36 @@
 from fastapi import FastAPI
-from starlette.requests import Request
-from starlette.responses import Response
-
-from pydantic_ai import Agent
-from pydantic_ai.ui.vercel_ai import VercelAIAdapter
+from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
 import uvicorn
 
 from app.endpoint.agent import router
 
+# Load environment variables from .env file
+load_dotenv()
 
-app = FastAPI()
+app = FastAPI(
+    title="Your Finance Bro API",
+    description="AI-powered financial assistant API",
+    version="0.1.0",
+)
+
+# Configure CORS for security
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, specify allowed origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Include agent router
+app.include_router(router=router, prefix="/agent", tags=["Agent"])
 
 
-app.include_router(router=router, prefix="/agent")
+@app.get("/", tags=["Health"])
+async def health_check():
+    """Health check endpoint."""
+    return {"status": "healthy", "message": "Your Finance Bro API is running"}
 
 
 if __name__ == "__main__":
