@@ -1,15 +1,15 @@
 {
   "exportInfo": {
-    "exportDate": "2025-11-06T16:57:11.134691",
+    "exportDate": "2025-11-07T12:58:02.368016",
     "appVersion": "1.0.0",
     "dataFormat": "json",
     "totalTransactions": 13,
     "totalAccounts": 3,
-    "totalBudgets": 2
+    "totalBudgets": 1
   },
   "transactions": [
     {
-      "id": "34b0dd57-158b-41fa-b9aa-8114ac1483bb",
+      "id": "9c101e9b-1c24-499d-8837-1ca249d43688",
       "date": "2025-11-04T09:19:53.000",
       "type": "transfer",
       "title": "Payment",
@@ -22,20 +22,20 @@
       "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
     },
     {
-      "id": "23669a68-6f10-4a71-bde8-87a827ac67d1",
-      "date": "2025-11-03T22:07:04.000",
+      "id": "c3a57e2b-3ca0-4bdc-97dc-c9e2822011bf",
+      "date": "2025-11-03T22:06:58.000",
       "type": "credit",
       "title": "Money Received",
-      "description": "Transaction via HDFC Bank (7252)",
+      "description": "Transaction (7252)",
       "amount": 54800.0,
       "category": "other",
       "location": null,
       "photos": [],
-      "smsContent": "Rs. 54,800 credited to A/c XX7252 on 11-03-2025 at 22:06:53 UTR:HDFCXX94405/NEFT/FEATSCLUB /         Avl Bal- Rs. 58,117.30 CR -Indian Bank",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "smsContent": "Your A/c XXX5557252  is credited by Rs. 54,800 Total Bal : Rs. 58,117.30 CR  Clr Bal : Rs. 58,117.30 CR as on:03/11/2025 22:06 -IndianBank",
+      "accountId": null
     },
     {
-      "id": "2fb02d90-5cbd-4105-9c4e-57d902b6b8c3",
+      "id": "e20e5147-e64f-4025-9335-b61a9e34e34e",
       "date": "2025-11-03T13:21:58.000",
       "type": "debit",
       "title": "Payment",
@@ -45,10 +45,10 @@
       "location": null,
       "photos": [],
       "smsContent": "A/c *7252 debited Rs. 1273.00 on 03-11-25 to Swiggy. UPI:807631716690. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     },
     {
-      "id": "12e4df38-90f2-4851-8658-a37ee4ad7ea2",
+      "id": "ebc725aa-8902-4465-8ad7-a96fc55f5854",
       "date": "2025-11-03T12:04:15.000",
       "type": "debit",
       "title": "Payment",
@@ -58,10 +58,10 @@
       "location": null,
       "photos": [],
       "smsContent": "A/c *7252 debited Rs. 320.00 on 03-11-25 to Mr Amrit Kum. UPI:212995815529. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     },
     {
-      "id": "a0bdad0d-891d-4c6d-98f5-4d08df0be74d",
+      "id": "68885698-a84c-456a-b4ae-9b65ab4e3ab2",
       "date": "2025-11-03T09:49:56.000",
       "type": "debit",
       "title": "Payment",
@@ -71,10 +71,10 @@
       "location": null,
       "photos": [],
       "smsContent": "A/c *7252 debited Rs. 1674.00 on 03-11-25 to AMAZON PAY. UPI:031442850120. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     },
     {
-      "id": "274b1e03-6305-417a-af29-f7fc69dbf0f9",
+      "id": "45175450-1adc-401a-8768-70081524d92b",
       "date": "2025-11-03T09:49:20.000",
       "type": "debit",
       "title": "Payment",
@@ -84,10 +84,10 @@
       "location": null,
       "photos": [],
       "smsContent": "A/c *7252 debited Rs. 496.02 on 03-11-25 to AMAZON PAY. UPI:568225661629. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     },
     {
-      "id": "cdaad17c-88f3-4db3-a3cd-a4cf637b79c7",
+      "id": "35781fe8-d58e-4f38-bf25-783a9447bb5d",
       "date": "2025-11-02T20:20:20.000",
       "type": "debit",
       "title": "Payment",
@@ -97,12 +97,12 @@
       "location": null,
       "photos": [],
       "smsContent": "Dear Swiggy customer, your refund reference number for Rs 108 is 245170207223-1-R1. https://r.swiggy.com/refunds",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     },
     {
-      "id": "09f13e24-953f-4f1c-a37d-09b2deda9feb",
+      "id": "8a08b32d-e13e-4b80-ad5b-a5a9852e86b9",
       "date": "2025-11-02T20:20:19.000",
-      "type": "credit",
+      "type": "transfer",
       "title": "swiggy.refunds",
       "description": "Transaction (7252)",
       "amount": 108.0,
@@ -110,10 +110,10 @@
       "location": null,
       "photos": [],
       "smsContent": "Rs.108.00 credited to a/c *7252 on 02/11/2025 by a/c linked to VPA swiggy.refunds@axisbank (UPI Ref no 504778163065).Indian Bank",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     },
     {
-      "id": "88b49f6a-c77c-4e92-b7fb-fe5634a69fbe",
+      "id": "ae86333a-5aaf-4801-bd48-c318ee23db80",
       "date": "2025-11-02T20:20:16.000",
       "type": "debit",
       "title": "Payment",
@@ -123,10 +123,10 @@
       "location": null,
       "photos": [],
       "smsContent": "Refund of Rs 108 has been initiated for Swiggy order 221061275962868. Updated balance should reflect in 2 hours. https://r.swiggy.com/refunds",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     },
     {
-      "id": "51d90518-6ecd-481d-8418-658b5673ea0b",
+      "id": "ff9a0151-3254-4cd3-a189-bbf3a9413806",
       "date": "2025-11-02T19:24:50.000",
       "type": "debit",
       "title": "Payment",
@@ -139,7 +139,7 @@
       "accountId": null
     },
     {
-      "id": "bd117ce4-a660-4018-afd0-53c3767290d9",
+      "id": "242effe9-7e00-42be-92e3-988e50ed2540",
       "date": "2025-11-01T22:52:42.000",
       "type": "credit",
       "title": "9883414525",
@@ -149,10 +149,10 @@
       "location": null,
       "photos": [],
       "smsContent": "Rs.68.00 credited to a/c *7252 on 01/11/2025 by a/c linked to VPA 9883414525@axl (UPI Ref no 701142460208).Indian Bank",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     },
     {
-      "id": "d063bace-a852-42dd-a6d3-b8370cd1a733",
+      "id": "61caf4ad-765e-48a2-935a-1102fa7e7d8e",
       "date": "2025-11-01T21:00:03.000",
       "type": "debit",
       "title": "Payment",
@@ -162,10 +162,10 @@
       "location": null,
       "photos": [],
       "smsContent": "A/c *7252 debited Rs. 370.00 on 01-11-25 to SANJIT KUMAR. UPI:063941337739. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     },
     {
-      "id": "c773bc15-5df1-46b0-8c3b-74a93c777d23",
+      "id": "16ca594a-7aab-4949-b128-fe3a13244edc",
       "date": "2025-11-01T17:04:26.000",
       "type": "debit",
       "title": "Payment",
@@ -175,7 +175,7 @@
       "location": null,
       "photos": [],
       "smsContent": "A/c *7252 debited Rs. 1154.00 on 01-11-25 to Swiggy. UPI:847503210960. Not you? SMS BLOCK to 9289592895, Dial 1930 for Cyber Fraud - Indian Bank",
-      "accountId": "f4cdf4f6-433b-483e-9df1-d29cc4bb051c"
+      "accountId": null
     }
   ],
   "accounts": [
@@ -185,10 +185,10 @@
       "accountNumber": "XXXXXX7252",
       "bankName": "Indian Bank",
       "accountType": "savings",
-      "balance": 5266.68,
+      "balance": -49533.32,
       "isActive": true,
-      "createdAt": "2025-11-06T16:56:13.195849",
-      "updatedAt": "2025-11-06T16:56:13.195850",
+      "createdAt": "2025-11-07T12:57:51.821933",
+      "updatedAt": "2025-11-07T12:57:51.821933",
       "ifscCode": null,
       "branchName": null,
       "description": null
@@ -199,10 +199,10 @@
       "accountNumber": "39329492349234",
       "bankName": "HDFC BANK",
       "accountType": "savings",
-      "balance": 85.0,
+      "balance": 54885.0,
       "isActive": false,
-      "createdAt": "2025-11-06T16:56:13.195984",
-      "updatedAt": "2025-11-06T16:56:13.195984",
+      "createdAt": "2025-11-07T12:57:51.821939",
+      "updatedAt": "2025-11-07T12:57:51.821939",
       "ifscCode": null,
       "branchName": null,
       "description": null
@@ -215,8 +215,8 @@
       "accountType": "savings",
       "balance": 84315.0,
       "isActive": false,
-      "createdAt": "2025-11-06T16:56:13.195985",
-      "updatedAt": "2025-11-06T16:56:13.195985",
+      "createdAt": "2025-11-07T12:57:51.821940",
+      "updatedAt": "2025-11-07T12:57:51.821940",
       "ifscCode": null,
       "branchName": null,
       "description": null
@@ -224,20 +224,12 @@
   ],
   "budgets": [
     {
-      "id": "d4b19f9e-df81-4b10-ad9e-71891c527e53",
+      "id": "5132101a-ad4c-4771-97b0-68eefcaf265a",
       "year": 2025,
       "month": 11,
       "amount": 8000.0,
-      "createdAt": "2025-11-06T16:23:50.000",
-      "updatedAt": "2025-11-06T16:23:50.000"
-    },
-    {
-      "id": "fc3876cf-063e-49f6-81df-cd171cf714e5",
-      "year": 2025,
-      "month": 10,
-      "amount": 20000.0,
-      "createdAt": "2025-11-06T16:24:07.000",
-      "updatedAt": "2025-11-06T16:24:07.000"
+      "createdAt": "2025-11-07T09:38:43.000",
+      "updatedAt": "2025-11-07T09:38:43.000"
     }
   ]
 }
