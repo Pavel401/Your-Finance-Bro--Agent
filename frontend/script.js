@@ -342,13 +342,11 @@ async function sendChatMessage(userQuery) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    // Handle streaming response with JSON objects
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
     let assistantMessage = '';
     let buffer = '';
 
-    // Hide typing indicator and show empty message
     hideTypingIndicator();
 
     // Create assistant message container
