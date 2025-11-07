@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 
-from app.model.finance_model import AgentRequest
+from app.model.agent_model import AgentRequest
 from app.services.agent_services import process_agent_output
 
 
@@ -40,7 +40,7 @@ async def chat(request: AgentRequest):
                 finance_info=request.finance_info,
                 chat_history=chat_history,
             ),
-            media_type="text/plain",
+            media_type="application/x-ndjson",  # Newline-delimited JSON
         )
     except Exception as e:
         # Log the error (in production, use proper logging)
