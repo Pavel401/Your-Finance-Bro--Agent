@@ -10,7 +10,6 @@ from app.services.finance_service import flatten_finance_info
 from app.services.llm_service import get_llm_model_config
 from app.services.utility_service import (
     convert_chat_history_to_messages,
-    is_finance_related_query,
 )
 
 
@@ -200,16 +199,6 @@ async def process_agent_output(
     Yields:
         Newline-delimited JSON strings containing validated AgentResponse objects
     """
-    # GUARDRAIL: Validate if query is finance-related before processing
-    is_valid, redirect_message = is_finance_related_query(user_query)
-
-    if not is_valid:
-        # Return a single response with the redirect message
-        off_topic_response = AgentResponse(
-            response=redirect_message, confidence_level="high"
-        )
-        yield off_topic_response.model_dump_json() + "\n"
-        return
 
     # Flatten finance info into readable text context
     finance_context = flatten_finance_info(finance_info)
