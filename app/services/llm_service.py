@@ -1,38 +1,66 @@
 # Configure the OpenAI model
+import os
 from pydantic_ai import ModelSettings
 from pydantic_ai.models.openai import OpenAIChatModel
-
-from pydantic_ai.models.openai import OpenAIChatModel
 from pydantic_ai.providers.openai import OpenAIProvider
-
-from app.configs.model_config import LLMModelName
 from pydantic_ai.models.google import GoogleModel
 from pydantic_ai.providers.google import GoogleProvider
 
+from app.configs.model_config import LLMModelName
 
-def openai_model(llm=LLMModelName):
 
-    OpenAIModelConfig = OpenAIChatModel(
-        llm.name,
-        provider=OpenAIProvider(api_key="OPEN_AI_KEY"),
-        settings=ModelSettings(
-            temperature=0.7,
-        ),
+def openai_model(llm: LLMModelName) -> OpenAIChatModel:
+    """
+    Create and configure an OpenAI model instance.
+
+    Args:
+        llm: The LLM model name from LLMModelName enum
+
+    Returns:
+        Configured OpenAIChatModel instance
+
+    Raises:
+        ValueError: If OPENAI_API_KEY environment variable is not set
+    """
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError(
+            "OPENAI_API_KEY environment variable is not set. "
+            "Please set it before using OpenAI models."
+        )
+
+    return OpenAIChatModel(
+        llm.value,
+        provider=OpenAIProvider(api_key=api_key),
+        settings=ModelSettings(temperature=0.7),
     )
 
-    return OpenAIModelConfig
 
+def google_model(llm: LLMModelName) -> GoogleModel:
+    """
+    Create and configure a Google Gemini model instance.
 
-def google_model(llm=LLMModelName):
+    Args:
+        llm: The LLM model name from LLMModelName enum
 
-    GoogleModelConfig = GoogleModel(
-        llm.name,
-        provider=GoogleProvider(api_key="GEMINI_API_KEY"),
-        settings=ModelSettings(
-            temperature=0.7,
-        ),
+    Returns:
+        Configured GoogleModel instance
+
+    Raises:
+        ValueError: If GOOGLE_API_KEY environment variable is not set
+    """
+    api_key = os.getenv("GOOGLE_API_KEY")
+    if not api_key:
+        raise ValueError(
+            "GOOGLE_API_KEY environment variable is not set. "
+            "Please set it before using Google Gemini models."
+        )
+
+    return GoogleModel(
+        llm.value,
+        provider=GoogleProvider(api_key=api_key),
+        settings=ModelSettings(temperature=0.7),
     )
-    return GoogleModelConfig
 
 
 def get_llm_model_config(model_name: LLMModelName):
@@ -40,10 +68,13 @@ def get_llm_model_config(model_name: LLMModelName):
     Returns the LLM model configuration for the given model name.
 
     Args:
-    - model_name (LLMModelName): The LLM model name.
+        model_name: The LLM model name from LLMModelName enum
 
     Returns:
-    - Model configuration object.
+        Model configuration object (OpenAIChatModel or GoogleModel)
+
+    Raises:
+        ValueError: If model name is unsupported or required API key is missing
     """
     if model_name in {
         LLMModelName.GPT_4_TURBO,
