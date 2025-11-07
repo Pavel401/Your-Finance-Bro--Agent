@@ -1,11 +1,12 @@
-from pydantic_ai import Agent, RunContext, UserPromptPart
-from pydantic_ai.messages import ModelRequest, ModelResponse
+from pydantic_ai import Agent, RunContext
+from pydantic_ai.messages import ModelRequest, ModelResponse, UserPromptPart, TextPart
 from typing import List, AsyncIterator
 
 from app.configs.model_config import LLMModelName
+from app.model.agent_model import ChatMessage
 from app.services.finance_service import flatten_finance_info
 from app.services.llm_service import get_llm_model_config
-from app.model.finance_model import FinanceInfo, ChatMessage
+from app.model.finance_model import FinanceInfo
 
 
 def convert_chat_history_to_messages(chat_history: List[ChatMessage]) -> list:
@@ -23,7 +24,6 @@ def convert_chat_history_to_messages(chat_history: List[ChatMessage]) -> list:
         if msg.role == "user":
             messages.append(ModelRequest(parts=[UserPromptPart(content=msg.content)]))
         elif msg.role == "assistant":
-            messages.append(ModelResponse(parts=[msg.content]))
-        elif msg.role == "system":
-            messages.append(ModelRequest(parts=[msg.content]))
+            # Create TextPart for assistant responses
+            messages.append(ModelResponse(parts=[TextPart(content=msg.content)]))
     return messages
