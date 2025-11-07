@@ -16,7 +16,6 @@ const fileName = document.getElementById('fileName');
 const fileStats = document.getElementById('fileStats');
 const removeFileBtn = document.getElementById('removeFile');
 const startChatBtn = document.getElementById('startChatBtn');
-const newChatBtn = document.getElementById('newChatBtn');
 const chatMessages = document.getElementById('chatMessages');
 const chatForm = document.getElementById('chatForm');
 const chatInput = document.getElementById('chatInput');
@@ -59,7 +58,6 @@ function initializeEventListeners() {
   // Button events
   removeFileBtn.addEventListener('click', resetFileUpload);
   startChatBtn.addEventListener('click', showChatSection);
-  newChatBtn.addEventListener('click', resetToUpload);
 
   // Chat events
   chatForm.addEventListener('submit', handleChatSubmit);
@@ -207,22 +205,6 @@ function showChatSection() {
 
   // Focus on input
   chatInput.focus();
-}
-
-function resetToUpload() {
-  chatSection.style.display = 'none';
-  uploadSection.style.display = 'flex';
-
-  // Clear chat history
-  chatHistory = [];
-
-  // Remove all messages except welcome message
-  const messages = chatMessages.querySelectorAll('.message, .typing-indicator');
-  messages.forEach((msg) => msg.remove());
-
-  // Reset input
-  chatInput.value = '';
-  handleInputChange();
 }
 
 // Chat Handlers
