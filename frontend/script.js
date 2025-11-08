@@ -11,6 +11,7 @@ const uploadSection = document.getElementById('uploadSection');
 const chatSection = document.getElementById('chatSection');
 const dropZone = document.getElementById('dropZone');
 const fileInput = document.getElementById('fileInput');
+const demoBtn = document.getElementById('demoBtn');
 const fileInfo = document.getElementById('fileInfo');
 const fileName = document.getElementById('fileName');
 const fileStats = document.getElementById('fileStats');
@@ -58,6 +59,7 @@ function initializeEventListeners() {
   // Button events
   removeFileBtn.addEventListener('click', resetFileUpload);
   startChatBtn.addEventListener('click', showChatSection);
+  if (demoBtn) demoBtn.addEventListener('click', loadDemoData);
 
   // Chat events
   chatForm.addEventListener('submit', handleChatSubmit);
@@ -132,6 +134,33 @@ function processFile(file) {
   };
 
   reader.readAsText(file);
+}
+
+async function loadDemoData() {
+  try {
+    // Optional: show loading state on button
+    if (demoBtn) {
+      demoBtn.classList.add('loading');
+      demoBtn.disabled = true;
+    }
+
+    const response = await fetch('/demo-data');
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const data = await response.json();
+
+    // Store and display as if a file was uploaded
+    validateAndStoreFinanceData(data, 'output.json');
+  } catch (err) {
+    console.error('Failed to load demo data:', err);
+    showError('Failed to load demo data. Please try again.');
+  } finally {
+    if (demoBtn) {
+      demoBtn.classList.remove('loading');
+      demoBtn.disabled = false;
+    }
+  }
 }
 
 function validateAndStoreFinanceData(data, name) {
@@ -299,14 +328,16 @@ function addAssistantMessage(message) {
 
 function showTypingIndicator() {
   const typingDiv = document.createElement('div');
-  typingDiv.className = 'typing-indicator';
+  typingDiv.className = 'message assistant typing-indicator';
   typingDiv.id = 'typingIndicator';
   typingDiv.innerHTML = `
         <div class="message-avatar">🤖</div>
-        <div class="typing-dots">
-            <div class="typing-dot"></div>
-            <div class="typing-dot"></div>
-            <div class="typing-dot"></div>
+        <div class="message-content">
+          <div class="typing-dots">
+              <div class="typing-dot"></div>
+              <div class="typing-dot"></div>
+              <div class="typing-dot"></div>
+          </div>
         </div>
     `;
 

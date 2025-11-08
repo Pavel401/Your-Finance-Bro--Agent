@@ -485,21 +485,13 @@ body {
 }
 
 /* Typing Indicator */
-.typing-indicator {
-  display: flex;
-  gap: 0.75rem;
-  max-width: 80%;
-}
-
-.typing-indicator .message-avatar {
-  background: var(--muted);
+.typing-indicator .message-content {
+  padding: 0.75rem 1rem;
 }
 
 .typing-dots {
-  background: var(--muted);
-  border-radius: var(--radius) var(--radius) var(--radius) 0;
-  padding: 1rem 1.5rem;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -508,7 +500,8 @@ body {
   height: 8px;
   border-radius: 50%;
   background: var(--muted-foreground);
-  animation: typing 1.4s infinite;
+  animation: typing 1.2s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .typing-dot:nth-child(2) {
@@ -520,15 +513,20 @@ body {
 }
 
 @keyframes typing {
-  0%,
-  60%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.5;
+  0%, 60%, 100% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0.45;
   }
   30% {
-    transform: translateY(-10px);
+    transform: translateY(-4px) scale(1);
     opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing-dot {
+    animation: none;
+    opacity: 0.6;
   }
 }
 
