@@ -18,22 +18,18 @@ app = FastAPI(
     version="0.1.0",
 )
 
-# Configure CORS for security
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify allowed origins
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include agent router
 app.include_router(router=router, prefix="/agent", tags=["Agent"])
 
-# Get the frontend directory path
 frontend_path = Path(__file__).parent / "frontend"
 
-# Mount static files (CSS, JS)
 app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
 
@@ -47,7 +43,6 @@ async def serve_frontend():
 async def get_config():
     """Get frontend configuration."""
     backend_url = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
-    # Ensure the URL has the proper protocol
     if not backend_url.startswith(("http://", "https://")):
         backend_url = f"https://{backend_url}"
     return {"apiBaseUrl": backend_url}
@@ -60,6 +55,5 @@ async def health_check():
 
 
 if __name__ == "__main__":
-    # Get port from environment variable (Railway sets this) or default to 8080
     port = int(os.getenv("PORT", 8080))
     uvicorn.run(app, host="0.0.0.0", port=port, reload=True)
