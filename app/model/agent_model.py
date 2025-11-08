@@ -16,7 +16,8 @@ class AgentRequest(BaseModel):
 
     user_query: str
     finance_info: FinanceInfo
-    chat_history: Optional[List[ChatMessage]] = []
+    # Avoid mutable default list which can leak state across requests
+    chat_history: Optional[List[ChatMessage]] = None
 
 
 class AgentResponse(BaseModel):
