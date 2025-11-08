@@ -133,7 +133,7 @@ class FinanceAgentService:
             deps=FinanceDeps(finance_context=finance_context),
             message_history=message_history,
         ) as result:
-            async for message, last in result.stream_responses(debounce_by=0.01):
+            async for message, last in result.stream_responses():
                 try:
                     profile = await result.validate_response_output(
                         message,
