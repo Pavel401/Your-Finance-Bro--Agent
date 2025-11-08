@@ -170,11 +170,4 @@ Ask your Finance Bro questions like:
 
 
 
-## 📄 Mere 3 Shabd 
-Andi Mandi Sandi Jo project copy karega without forking and giving a star the repo wow hai ________ Baki **तुम समझदार हो ना?** (You're smart, right?) 😉
-If you're using this project, at least give it a ⭐ and fork it properly.  
-Remember: Good karma in open source = fewer bugs in your code! 🙏
-
-
-
 
