@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import uvicorn
 import os
 from pathlib import Path
+import json
 
 from app.endpoint.agent import router
 
@@ -46,6 +47,20 @@ async def get_config():
     if not backend_url.startswith(("http://", "https://")):
         backend_url = f"https://{backend_url}"
     return {"apiBaseUrl": backend_url}
+
+
+@app.get("/demo-data", tags=["Frontend"])
+async def get_demo_data():
+    """Return bundled demo financial data (output.json)."""
+    sample_path = Path(__file__).parent / "output.json"
+    if not sample_path.exists():
+        raise HTTPException(status_code=404, detail="Demo data not found")
+    try:
+        with sample_path.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to load demo data: {e}")
 
 
 @app.get("/health", tags=["Health"])
