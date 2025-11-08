@@ -347,9 +347,7 @@ async function sendChatMessage(userQuery) {
     let assistantMessage = '';
     let buffer = '';
 
-    hideTypingIndicator();
-
-    // Create assistant message container
+    // Create assistant message container (keep typing indicator until first chunk)
     const messageDiv = document.createElement('div');
     messageDiv.className = 'message assistant';
     messageDiv.innerHTML = `
@@ -360,6 +358,7 @@ async function sendChatMessage(userQuery) {
         `;
     chatMessages.appendChild(messageDiv);
     const messageText = messageDiv.querySelector('.message-text');
+    let gotFirstChunk = false;
 
     // Read the stream
     while (true) {
@@ -389,6 +388,10 @@ async function sendChatMessage(userQuery) {
             // Extract response_text from the validated response
             if (jsonResponse.response_text) {
               assistantMessage = jsonResponse.response_text;
+              if (!gotFirstChunk) {
+                hideTypingIndicator();
+                gotFirstChunk = true;
+              }
               messageText.innerHTML = formatMessage(assistantMessage);
               scrollToBottom();
             }
@@ -406,6 +409,10 @@ async function sendChatMessage(userQuery) {
         const jsonResponse = JSON.parse(buffer);
         if (jsonResponse.response_text) {
           assistantMessage = jsonResponse.response_text;
+          if (!gotFirstChunk) {
+            hideTypingIndicator();
+            gotFirstChunk = true;
+          }
           messageText.innerHTML = formatMessage(assistantMessage);
           scrollToBottom();
         }
