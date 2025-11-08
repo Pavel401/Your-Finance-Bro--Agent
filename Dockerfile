@@ -32,13 +32,11 @@ RUN useradd -m -u 1000 appuser && \
     chown -R appuser:appuser /app
 USER appuser
 
-# Expose port (Railway will override with $PORT)
 EXPOSE 8080
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import requests; requests.get('http://localhost:${PORT:-8080}/health')" || exit 1
 
-# Run the application
-# Use shell form to allow environment variable substitution
+
 CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8080}
