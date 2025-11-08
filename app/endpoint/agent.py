@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
+import logfire
 
 from app.model.agent_model import AgentRequest
 from app.services.agent_services import process_agent_output
