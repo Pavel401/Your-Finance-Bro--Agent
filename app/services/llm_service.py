@@ -7,6 +7,7 @@ from pydantic_ai.models.google import GoogleModel
 from pydantic_ai.providers.google import GoogleProvider
 
 from app.configs.model_config import LLMModelName
+from app.services.envManager import get_env_variable
 
 
 def openai_model(llm: LLMModelName) -> OpenAIChatModel:
@@ -22,7 +23,7 @@ def openai_model(llm: LLMModelName) -> OpenAIChatModel:
     Raises:
         ValueError: If OPENAI_API_KEY environment variable is not set
     """
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = get_env_variable("OPENAI_API_KEY")
     if not api_key:
         raise ValueError(
             "OPENAI_API_KEY environment variable is not set. "
@@ -49,7 +50,7 @@ def google_model(llm: LLMModelName) -> GoogleModel:
     Raises:
         ValueError: If GOOGLE_API_KEY environment variable is not set
     """
-    api_key = os.getenv("GOOGLE_API_KEY")
+    api_key = get_env_variable("GOOGLE_API_KEY")
     if not api_key:
         raise ValueError(
             "GOOGLE_API_KEY environment variable is not set. "
